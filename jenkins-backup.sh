@@ -10,7 +10,7 @@ readonly JENKINS_HOME=$1
 readonly DEST_FILE=$2
 readonly CUR_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 readonly TMP_DIR="$CUR_DIR/tmp"
-readonly ARC_NAME="jenkins-backup"
+readonly ARC_NAME="jenkins"
 readonly ARC_DIR="$TMP_DIR/$ARC_NAME"
 readonly TMP_TAR_NAME="archive.tar.gz"
 
