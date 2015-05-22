@@ -32,7 +32,11 @@ jpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.jpi.pinned | wc -l)
 if [ $hpi_pinned_count -ne 0 -o $jpi_pinned_count -ne 0 ]; then
   cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
 fi
-cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
+
+if [ -e "$JENKINS_HOME/users/"*; then
+  cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
+fi
+
 
 cd "$JENKINS_HOME/jobs/"
 ls -1 | while read job_name
